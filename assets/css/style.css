@@ -1,0 +1,203 @@
+body {
+    background: #F9EFFF;
+    margin: 0;
+}
+
+/* Подлючаем шрифты */
+@font-face {
+    font-family: "Raleway";
+    src: url("/assets/fonts/raleway-medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Raleway";
+    src: url("/assets/fonts/raleway-semibold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Neue Machina";
+    src: url("/assets/fonts/neuemachina-bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Neue Machina";
+    src: url("/assets/fonts/neuemachina-ultrabold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+header {
+    display: none;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: Neue Machina, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 34.74px;
+    text-align: left;
+}
+
+/* Стили для контейнера и боковой панели */
+.quiz-wrapper {
+    display: block;
+}
+
+.quiz-sidebar {
+
+}
+
+.quiz-content {
+    background: white;
+    padding: 15px 10px 10px 10px;
+    border-radius: 16px 16px 32px 32px;
+}
+
+.quiz-question {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    border-radius: 25px 25px 15px 15px;
+    padding: 10px 15px;
+    margin-bottom: 4px;
+}
+
+.quiz-question.active {
+    background: black;
+    color: white;
+}
+
+.quiz-question b, .quiz-question p {
+    margin: 0;
+}
+
+.quiz {
+    display: none;
+}
+
+/* Стили для активного вопроса */
+.quiz.active {
+    display: block;
+}
+
+.quiz h1 {
+    font-family: Neue Machina, sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 38.6px;
+    text-align: left;
+}
+
+.quiz p {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18.78px;
+    text-align: left;
+}
+
+/* Базовые стили для контейнера и чекбоксов */
+.checkbox-container {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.78px;
+    text-align: left;
+}
+
+.custom-checkbox {
+    display: inline-block;
+    position: relative;
+    padding: 5px 10px 5px 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.custom-checkbox:hover, .custom-checkbox.active {
+    color: white;
+    background: black;
+}
+
+/* Скрываем стандартный чекбокс */
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Создаем кастомный чекбокс */
+.checkmark {
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
+/* Стили для чекбокса при выборе */
+.custom-checkbox input:checked ~ .checkmark {
+    content: url(/assets/img/check.svg);
+}
+
+
+
+/*
+.navbar {
+    width: 100%;
+}
+
+.nav-menu {
+    padding: 0;
+}
+
+.nav-item {
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.48px;
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    background: #444;
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+
+}*/

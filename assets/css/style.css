@@ -38,7 +38,7 @@ header {
     justify-content: space-between;
 }
 
-.logo {
+.logo, .quiz h1 {
     font-family: Neue Machina, sans-serif;
     font-size: 36px;
     font-weight: 700;
@@ -46,7 +46,8 @@ header {
     text-align: left;
 }
 
-/* Стили для контейнера и боковой панели */
+/* Стили для квиза */
+
 .quiz-wrapper {
     display: block;
 }
@@ -61,7 +62,7 @@ header {
     border-radius: 16px 16px 32px 32px;
 }
 
-.quiz-question {
+.quiz-question, .quiz p {
     font-family: Raleway, sans-serif;
     font-size: 16px;
     background: white;
@@ -84,28 +85,11 @@ header {
     display: none;
 }
 
-/* Стили для активного вопроса */
 .quiz.active {
     display: block;
 }
 
-.quiz h1 {
-    font-family: Neue Machina, sans-serif;
-    font-size: 40px;
-    font-weight: 800;
-    line-height: 38.6px;
-    text-align: left;
-}
-
-.quiz p {
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 18.78px;
-    text-align: left;
-}
-
-/* Базовые стили для контейнера и чекбоксов */
+/* Стили для чекбоксов */
 .checkbox-container {
     font-family: Raleway, sans-serif;
     font-size: 16px;
@@ -114,45 +98,87 @@ header {
     text-align: left;
 }
 
+.checkbox-container fieldset {
+    border: none;
+    padding: 0;
+}
+
 .custom-checkbox {
     display: inline-block;
     position: relative;
-    padding: 5px 10px 5px 30px;
+    padding: 5px 20px 5px 20px;
     margin-bottom: 12px;
     cursor: pointer;
     user-select: none;
     border-radius: 20px;
     border: 2px solid black;
+    transition-duration: .2s;
 }
 
-.custom-checkbox:hover, .custom-checkbox.active {
+.custom-checkbox label {
+    cursor: pointer;
+}
+
+.custom-checkbox.active{
     color: white;
     background: black;
 }
 
-/* Скрываем стандартный чекбокс */
-.custom-checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+.custom-checkbox.active {
+    padding: 5px 10px 5px 30px;
+    transition-duration: .2s;
 }
 
-/* Создаем кастомный чекбокс */
+.custom-checkbox input {
+    display: none;
+}
+
 .checkmark {
     position: absolute;
     top: 2px;
-    left: 1px;
+    left: 2px;
     height: 25px;
     width: 25px;
     border-radius: 50%;
 }
 
-/* Стили для чекбокса при выборе */
 .custom-checkbox input:checked ~ .checkmark {
     content: url(/assets/img/check.svg);
 }
 
+/* Стили для кнопок назад и продолжить */
 
+.quiz-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.quiz-back, .quiz-next {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.78px;
+    text-align: center;
+    border: 2px solid black;
+    width: 140px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.quiz-back {
+    display: none;
+    background: none;
+    margin-right: 3px;
+    border-radius: 10px 10px 10px 15px;
+}
+
+.quiz-next {
+    background: black;
+    color: white;
+    margin-left: 3px;
+    border-radius: 10px 10px 15px 10px;
+}
 
 /*
 .navbar {
@@ -198,6 +224,17 @@ header {
     text-decoration: none;
 }
 
+
+ */
+
+/* Отображаем ховер только на ПК */
+@media (hover: hover) and (pointer: fine) {
+    .custom-checkbox:hover {
+        color: white;
+        background: black;
+    }
+}
+
 @media (min-width: 768px) {
 
-}*/
+}

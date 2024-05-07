@@ -57,60 +57,99 @@
                 <div id="quiz-1" class="quiz active">
                     <h1>Что? где? когда?</h1>
                     <p>Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
-                    <!-- Стилизованные чекбоксы -->
-                    <div class="checkbox-container">
-                        <label class="custom-checkbox">
-                            Не знаю
-                            <input type="checkbox" />
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="custom-checkbox active">
-                            Знаю
-                            <input type="checkbox" checked="checked" />
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="custom-checkbox">
-                            Увидел это
-                            <input type="checkbox" />
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="custom-checkbox">
-                            Вон то
-                            <input type="checkbox" />
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="custom-checkbox">
-                            Он пошел туда
-                            <input type="checkbox" />
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="custom-checkbox active">
-                            Санкт-Петербург
-                            <input type="checkbox" checked="checked" />
-                            <span class="checkmark"></span>
-                        </label>
-                        <!-- Дополнительные чекбоксы -->
-                    </div>
+                    <!-- Ответы -->
+                    <form class="checkbox-container" action="">
+                        <fieldset>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="1" id="a-1-1">
+                                <label for="a-1-1">Не знаю</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="2" id="a-1-2">
+                                <label for="a-1-2">Знаю</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="3" id="a-1-3">
+                                <label for="a-1-3">Увидел это</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="4" id="a-1-4">
+                                <label for="a-1-4">Вон то</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="4" id="a-1-5">
+                                <label for="a-1-5">Он пошел туда</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="4" id="a-1-6">
+                                <label for="a-1-6">Санкт-Петербург</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <!-- Дополнительные чекбоксы -->
+                        </fieldset>
+                    </form>
                 </div>
                 <div id="quiz-2" class="quiz">
                     <h1>Что? где? когда?</h1>
                     <p>Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
-                    <!-- Стилизованные чекбоксы -->
-                    <div class="checkbox-container">
-                        <label class="custom-checkbox">
-                            Не знаю
-                            <input type="checkbox" />
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="custom-checkbox active">
-                            Знаю
-                            <input type="checkbox" checked="checked" />
-                            <span class="checkmark"></span>
-                        </label>
-                        <!-- Дополнительные чекбоксы -->
-                    </div>
+                    <!-- Ответы -->
+                    <form class="checkbox-container" action="">
+                        <fieldset>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="1" id="a-2-1">
+                                <label for="a-2-1">Не знаю</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="2" id="a-2-2">
+                                <label for="a-2-2">Он пошел туда</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="3" id="a-2-3">
+                                <label for="a-2-3">Вон то</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <!-- Дополнительные чекбоксы -->
+                        </fieldset>
+                    </form>
                 </div>
-                <!-- Дополнительные ответы -->
+                <div id="quiz-3" class="quiz">
+                    <h1>Что? где? когда?</h1>
+                    <p>Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+                    <!-- Ответы -->
+                    <form class="checkbox-container" action="">
+                        <fieldset>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="2" id="a-3-1">
+                                <label for="a-3-1">Он пошел туда</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="3" id="a-3-2">
+                                <label for="a-3-2">Вон то</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="1" id="a-3-3">
+                                <label for="a-3-3">Не знаю</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <!-- Дополнительные чекбоксы -->
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- Дополнительные вопросы -->
+
+                <div class="quiz-buttons">
+                    <button id="back-button" class="quiz-back">Назад</button>
+                    <button id="continue-button" class="quiz-next">Продолжить</button>
+                </div>
             </div>
         </div>
     </main>
@@ -133,7 +172,83 @@
             qq.classList.add('active');
             let quiz = document.getElementById('quiz-' + number);
             quiz.classList.add('active');
+
+            // Показываем/скрываем кнопку назад
+            if (number === 1) {
+                document.getElementById('back-button').style.display = 'none';
+            } else {
+                document.getElementById('back-button').style.display = 'block';
+            }
         }
+
+        // Обработчик для кнопок ответа
+        document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('click', clickAnswer, false);
+            function clickAnswer(event) {
+                // Если нажали на custom-checkbox
+                if (event.target.closest('.custom-checkbox')) {
+                    event.target.closest('.custom-checkbox').classList.toggle('active');
+                    const input = event.target.closest('.custom-checkbox').querySelector('input[type="checkbox"]');
+                    input.checked = !input.checked;
+                }
+                // Если нажали на label
+                if (event.target.closest('label')) {
+                    event.target.closest('label').parentElement.classList.toggle('active');
+                    const input = event.target.closest('label').previousSibling;
+                    input.checked = !input.checked;
+                }
+            }
+        });
+
+        // Кнопка продолжить
+        function nextQuestion() {
+            // Получаем текущий активный вопрос
+            let currentQuestion = document.querySelector('.quiz-question.active');
+            // Получаем следующий вопрос
+            let nextQuestion = currentQuestion.nextElementSibling;
+
+            // Если следующий вопрос существует
+            if (nextQuestion) {
+                // Получаем id следуещего вопроса и извлекаем цифру вопроса
+                let nextQuestionId = nextQuestion.id.replace(/\D/g, "");
+                // Переключаемся с текущего вопроса
+                currentQuestion.classList.remove('active');
+                // На следующий вопрос
+                nextQuestion.classList.add('active');
+                // Показываем квиз
+                showQuestion(nextQuestionId);
+            } else {
+                // Если это был последний вопрос, можно добавить логику для завершения викторины
+                console.log('Викторина завершена');
+            }
+        }
+
+        // Кнопка назад
+        function prevQuestion() {
+            // Получаем текущий активный вопрос
+            let currentQuestion = document.querySelector('.quiz-question.active');
+            // Получаем предыдущий вопрос
+            let prevQuestion = currentQuestion.previousElementSibling;
+
+            // Если предыдущий вопрос существует
+            if (prevQuestion) {
+                // Получаем id предыдущего вопроса и извлекаем цифру вопроса
+                let prevQuestionId = prevQuestion.id.replace(/\D/g, "");
+                // Переключаемся с текущего вопроса
+                currentQuestion.classList.remove('active');
+                // На предыдущий вопрос
+                prevQuestion.classList.add('active');
+                // Показываем квиз
+                showQuestion(prevQuestionId);
+            }
+        }
+
+        // Добавляем обработчик события на кнопку "Продолжить"
+        document.getElementById('continue-button').onclick = nextQuestion;
+        // Добавляем обработчик события на кнопку "Назад"
+        document.getElementById('back-button').onclick = prevQuestion;
+
+
     </script>
 </body>
 </html>

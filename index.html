@@ -5,6 +5,7 @@
     <title>Super Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <header class="main-header">
@@ -163,10 +164,118 @@
                 </div>
             </div>
         </div>
+        <!-- Контейнер для карточек -->
+        <div class="swiper swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-holder">
+                            <div class="union"></div>
+                            <img src="assets/img/avatar2.png" alt="Тимур Никитенко">
+                            <h3>Тимур Никитенко</h3>
+                            <p>Господа, глубокий уровень погружения в значительной степени обусловливает важность глубокомысленных рассуждений.</p>
+                        </div>
+                        <img class="card__background" src="assets/img/background2.png" alt="background">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-holder">
+                            <div class="union"></div>
+                            <img src="assets/img/avatar3.png" alt="Артур Усович">
+                            <h3>Артур Усович</h3>
+                            <p>Задача организации, в особенности же убеждённость некоторых оппонентов предопределяет высокую востребованность благоприятных перспектив.</p>
+                        </div>
+                        <img class="card__background" src="assets/img/background3.png" alt="background">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-holder">
+                            <div class="union"></div>
+                            <img src="assets/img/avatar4.png" alt="Егор Грей">
+                            <h3>Егор Грей</h3>
+                            <p>Разнообразный и богатый опыт говорит нам, что высокое качество позиционных исследований предопределяет высокую востребованность кластеризации усилий.</p>
+                        </div>
+                        <img class="card__background" src="assets/img/background4.png" alt="background">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-holder">
+                            <div class="union"></div>
+                            <img src="assets/img/avatar3.png" alt="Артур Усович">
+                            <h3>Артур Усович</h3>
+                            <p>Задача организации, в особенности же убеждённость некоторых оппонентов предопределяет высокую востребованность благоприятных перспектив.</p>
+                        </div>
+                        <img class="card__background" src="assets/img/background3.png" alt="background">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-holder">
+                            <div class="union"></div>
+                            <img src="assets/img/avatar2.png" alt="Тимур Никитенко">
+                            <h3>Тимур Никитенко</h3>
+                            <p>Мне очень понравился тест.</p>
+                        </div>
+                        <img class="card__background" src="assets/img/background2.png" alt="background">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-holder">
+                            <div class="union"></div>
+                            <img src="assets/img/avatar1.png" alt="Андрей Пархимович">
+                            <h3>Андрей Пархимович</h3>
+                            <p>В целом, конечно, постоянное информационно-пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.</p>
+                        </div>
+                        <img class="card__background" src="assets/img/background1.png" alt="background">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
     </main>
     <footer class="main-footer">
 
     </footer>
+    <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".swiper-container", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 1.13,
+            spaceBetween: 10,
+            breakpoints: {
+                440: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 40
+                },
+                540: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 40
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 40
+                },
+                820: {
+                    slidesPerView: 2.3,
+                    spaceBetween: 40
+                },
+                1080: {
+                    slidesPerView: 3.8,
+                    spaceBetween: 40
+                }
+            }
+        });
+    </script>
     <script>
         // JavaScript для отображения ответа на выбранный вопрос
         function showQuestion(number) {
@@ -192,8 +301,8 @@
             }
         }
 
-        // Обработчик для кнопок ответа
         document.addEventListener('DOMContentLoaded', () => {
+            // Обработчик для кнопок ответа
             document.addEventListener('click', clickAnswer, false);
             function clickAnswer(event) {
                 // Если нажали на custom-checkbox

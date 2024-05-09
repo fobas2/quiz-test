@@ -1,6 +1,17 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
 body {
     background: #F9EFFF;
     margin: 0;
+    padding: 0;
+}
+
+main {
+    height: 1250px;
 }
 
 /* Подлючаем шрифты */
@@ -50,6 +61,7 @@ header {
 
 .quiz-wrapper {
     display: block;
+    margin-bottom: 40px;
 }
 
 .quiz-sidebar {
@@ -146,7 +158,7 @@ header {
 }
 
 .custom-checkbox input:checked ~ .checkmark {
-    content: url(/assets/img/check.svg);
+    content: url("/assets/img/check.svg");
 }
 
 /* Стили для радио кнопок  */
@@ -229,6 +241,80 @@ header {
     color: white;
     margin-left: 3px;
     border-radius: 10px 10px 15px 10px;
+}
+
+/* Стили для кнопок слайдера */
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex !important;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 353px;
+    height: 464px;
+    border-radius: 32px;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.card h3 {
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.18px;
+    text-align: center;
+}
+
+.card p {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.78px;
+    text-align: left;
+}
+
+.card-holder {
+    background: white;
+    box-sizing: border-box;
+    position: absolute;
+    margin: 8px;
+    padding: 25px 15px 10px 15px;
+    border-radius: 32px;
+    height: auto;
+    width: calc(100% - 16px);
+    bottom: 0;
+}
+
+.card-holder img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 40px);
+    top: -40px;
+}
+
+.union {
+    content: url("/assets/img/union.svg");
+    position: absolute;
+    top: -46px;
+    left: calc(50% - 64px);
+}
+
+.card__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    display: none !important;
 }
 
 /*
@@ -321,9 +407,10 @@ header {
     .quiz-wrapper {
         display: flex;
         max-width: 1440px;
-        min-height: 634px;
+        min-height: 589px;
         margin: 0 auto;
         margin-top: 10px;
+        margin-bottom: 40px;
     }
 
     .quiz-question {
@@ -384,5 +471,14 @@ header {
 
     .quiz-back, .quiz-next {
         border-radius: 10px;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        display: flex !important;
+        height: 100px !important;
+        width: 100px !important;
+        background: white;
+        border-radius: 32px;
+        color: black !important;
     }
 }

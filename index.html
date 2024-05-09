@@ -39,12 +39,12 @@
             <!-- Боковая панель с вопросами -->
             <div class="quiz-sidebar">
                 <div id="qq-1" class="quiz-question active" onclick="showQuestion(1)">
-                    <b>Сколько этого у того</b>
-                    <p>Пройди, и будешь счастлив.</p>
+                    <b>Какие виды тестов вам нравятся?</b>
+                    <p>Кто я из вселенной Марвел, На словарный запас</p>
                 </div>
                 <div id="qq-2" class="quiz-question" onclick="showQuestion(2)">
-                    <b>Кто взял это</b>
-                    <p>Пройди, и будешь счастлив.</p>
+                    <b>Вы любите проходить тесты?</b>
+                    <p>Да, я прохожу все тесты</p>
                 </div>
                 <div id="qq-3" class="quiz-question" onclick="showQuestion(3)">
                     <b>Кто взял это</b>
@@ -55,19 +55,19 @@
             <!-- Окно для отображения текущего вопроса -->
             <div class="quiz-content">
                 <div id="quiz-1" class="quiz active">
-                    <h1>Что? где? когда?</h1>
-                    <p>Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+                    <h1>Какие виды тестов вам нравятся?</h1>
+                    <p>Многие из нас хоть раз попадались на эту удочку — хочешь пройти всего один тест из интернета, и вдруг понимаешь, что пролетело полдня.</p>
                     <!-- Ответы -->
-                    <form class="checkbox-container" action="">
+                    <form class="answer-container" action="">
                         <fieldset>
                             <div class="custom-checkbox">
                                 <input type="checkbox" name="1" id="a-1-1">
-                                <label for="a-1-1">Не знаю</label>
+                                <label for="a-1-1">На темперамент</label>
                                 <span class="checkmark"></span>
                             </div>
                             <div class="custom-checkbox">
                                 <input type="checkbox" name="2" id="a-1-2">
-                                <label for="a-1-2">Знаю</label>
+                                <label for="a-1-2">Кто я из вселенной Марвел</label>
                                 <span class="checkmark"></span>
                             </div>
                             <div class="custom-checkbox">
@@ -77,17 +77,27 @@
                             </div>
                             <div class="custom-checkbox">
                                 <input type="checkbox" name="4" id="a-1-4">
-                                <label for="a-1-4">Вон то</label>
+                                <label for="a-1-4">Мое тотемное животное</label>
                                 <span class="checkmark"></span>
                             </div>
                             <div class="custom-checkbox">
                                 <input type="checkbox" name="4" id="a-1-5">
-                                <label for="a-1-5">Он пошел туда</label>
+                                <label for="a-1-5">На IQ</label>
                                 <span class="checkmark"></span>
                             </div>
                             <div class="custom-checkbox">
                                 <input type="checkbox" name="4" id="a-1-6">
-                                <label for="a-1-6">Санкт-Петербург</label>
+                                <label for="a-1-6">На словарный запас</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="4" id="a-1-7">
+                                <label for="a-1-7">На логическое мышление</label>
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" name="4" id="a-1-8">
+                                <label for="a-1-8">На уровень интеллекта</label>
                                 <span class="checkmark"></span>
                             </div>
                             <!-- Дополнительные чекбоксы -->
@@ -95,27 +105,28 @@
                     </form>
                 </div>
                 <div id="quiz-2" class="quiz">
-                    <h1>Что? где? когда?</h1>
-                    <p>Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+                    <h1>Вы любите проходить тесты?</h1>
+                    <p>Нам важно узнать насолько часто Вы проходите тесты.</p>
                     <!-- Ответы -->
-                    <form class="checkbox-container" action="">
+                    <form class="answer-container" action="">
                         <fieldset>
-                            <div class="custom-checkbox">
-                                <input type="checkbox" name="1" id="a-2-1">
-                                <label for="a-2-1">Не знаю</label>
-                                <span class="checkmark"></span>
+                            <div class="custom-radio">
+                                <input type="radio" name="1" id="a-2-1">
+                                <label for="a-2-1">Нет, я никогда не прохожу тесты</label>
                             </div>
-                            <div class="custom-checkbox">
-                                <input type="checkbox" name="2" id="a-2-2">
-                                <label for="a-2-2">Он пошел туда</label>
-                                <span class="checkmark"></span>
+                            <div class="custom-radio">
+                                <input type="radio" name="1" id="a-2-2">
+                                <label for="a-2-2">Да, я прохожу все тесты</label>
                             </div>
-                            <div class="custom-checkbox">
-                                <input type="checkbox" name="3" id="a-2-3">
-                                <label for="a-2-3">Вон то</label>
-                                <span class="checkmark"></span>
+                            <div class="custom-radio">
+                                <input type="radio" name="1" id="a-2-3">
+                                <label for="a-2-3">Заставляю себя проходить тесты</label>
                             </div>
-                            <!-- Дополнительные чекбоксы -->
+                            <div class="custom-radio">
+                                <input type="radio" name="1" id="a-2-4">
+                                <label for="a-2-4">Не люблю проходить тесты, но иногда приходится</label>
+                            </div>
+                            <!-- Дополнительные радио -->
                         </fieldset>
                     </form>
                 </div>
@@ -123,7 +134,7 @@
                     <h1>Что? где? когда?</h1>
                     <p>Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
                     <!-- Ответы -->
-                    <form class="checkbox-container" action="">
+                    <form class="answer-container" action="">
                         <fieldset>
                             <div class="custom-checkbox">
                                 <input type="checkbox" name="2" id="a-3-1">
@@ -174,7 +185,7 @@
             quiz.classList.add('active');
 
             // Показываем/скрываем кнопку назад
-            if (number === 1) {
+            if (number == 1) {
                 document.getElementById('back-button').style.display = 'none';
             } else {
                 document.getElementById('back-button').style.display = 'block';
@@ -190,6 +201,15 @@
                     event.target.closest('.custom-checkbox').classList.toggle('active');
                     const input = event.target.closest('.custom-checkbox').querySelector('input[type="checkbox"]');
                     input.checked = !input.checked;
+                }
+                // Если нажали на custom-radio
+                if (event.target.closest('.custom-radio')) {
+                    document.querySelectorAll('.custom-radio').forEach(function(cr) {
+                        cr.classList.remove('active');
+                    });
+                    event.target.closest('.custom-radio').classList.add('active');
+                    const input = event.target.closest('.custom-radio').querySelector('input[type="radio"]');
+                    input.checked = true;
                 }
                 // Если нажали на label
                 if (event.target.closest('label')) {

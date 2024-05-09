@@ -65,11 +65,14 @@ header {
 .quiz-question, .quiz p {
     font-family: Raleway, sans-serif;
     font-size: 16px;
-    background: white;
-    cursor: pointer;
-    border-radius: 25px 25px 15px 15px;
+}
+
+.quiz-question {
     padding: 10px 15px;
     margin-bottom: 4px;
+    border-radius: 25px 25px 15px 15px;
+    background: white;
+    cursor: pointer;
 }
 
 .quiz-question.active {
@@ -90,7 +93,7 @@ header {
 }
 
 /* Стили для чекбоксов */
-.checkbox-container {
+.answer-container {
     font-family: Raleway, sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -98,7 +101,7 @@ header {
     text-align: left;
 }
 
-.checkbox-container fieldset {
+.answer-container fieldset {
     border: none;
     padding: 0;
 }
@@ -144,6 +147,54 @@ header {
 
 .custom-checkbox input:checked ~ .checkmark {
     content: url(/assets/img/check.svg);
+}
+
+/* Стили для радио кнопок  */
+.custom-radio {
+    display: inline-block;
+    position: relative;
+    padding: 5px 20px 5px 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 20px;
+    border: 2px solid black;
+    transition-duration: .2s;
+}
+
+.custom-radio.active {
+    background: black;
+    color: white;
+}
+
+.custom-radio input[type="radio"] {
+    display: none;
+}
+
+.custom-radio input[type="radio"] + label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.custom-radio input[type="radio"] + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.custom-radio input[type="radio"]:checked + label:before {
+    border: 3px solid white;
+    background-color: black;
+    width: 15px;
+    height: 15px;
 }
 
 /* Стили для кнопок назад и продолжить */
@@ -231,10 +282,107 @@ header {
 @media (hover: hover) and (pointer: fine) {
     .custom-checkbox:hover {
         color: white;
+        background: #9E00FF;
+        border: 2px solid #9E00FF;
+    }
+
+    .quiz-question:hover {
+        background: #9E00FF;
+        color: white;
+    }
+
+    .custom-radio:hover {
+        color: white;
+        background: #9E00FF;
+        border: 2px solid #9E00FF;
+    }
+
+    .custom-radio.active:hover {
         background: black;
+        border: 2px solid black;
+    }
+
+    .custom-radio:hover input[type="radio"] + label:before {
+        left: 2px;
+        top: 1px;
+        border: none;
+    }
+
+    .custom-radio.active:hover input[type="radio"] + label:before {
+        left: 0;
+        top: 0;
+        border: 3px solid white;
+        background-color: #9E00FF;
     }
 }
 
 @media (min-width: 768px) {
 
+    .quiz-wrapper {
+        display: flex;
+        max-width: 1440px;
+        min-height: 634px;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+    .quiz-question {
+        max-width: 320px;
+        border-radius: 5px;
+    }
+
+    .quiz-question:first-child {
+        border-radius: 20px 20px 5px 5px;
+    }
+
+    .quiz-question:last-child {
+        border-radius: 5px 5px 20px 20px;
+    }
+
+    .quiz-question p {
+        margin-top: 10px;
+    }
+
+    .quiz-sidebar {
+        margin-right: 5px;
+    }
+
+    .quiz-content {
+        height: 100%;
+        max-width: 1112px;
+    }
+
+    .quiz {
+        padding-left: 20px;
+    }
+
+    .quiz h1 {
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 69.48px;
+        text-align: left;
+    }
+
+    .quiz p {
+        max-width: 700px;
+        padding: 0 0 50px 0;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 23.48px;
+
+    }
+
+    .answer-container {
+        max-width: 600px;
+    }
+
+    .quiz-buttons {
+        justify-content: left;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .quiz-back, .quiz-next {
+        border-radius: 10px;
+    }
 }

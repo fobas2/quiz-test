@@ -11,7 +11,7 @@ body {
 }
 
 main {
-    height: 1250px;
+    height: 1450px;
 }
 
 /* Подлючаем шрифты */
@@ -44,9 +44,17 @@ main {
     font-display: swap;
 }
 
+/* Стили для header'a */
+
 header {
-    display: none;
+    display: flex;
     justify-content: space-between;
+    height: 55px;
+    background: white;
+    border-radius: 0 0 32px 32px;
+    padding: 0 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #0000000D
 }
 
 .logo, .quiz h1 {
@@ -57,7 +65,95 @@ header {
     text-align: left;
 }
 
-/* Стили для квиза */
+.logo {
+    font-size: 8vw;
+    text-align: left;
+    white-space: nowrap;
+    margin-top: 6px;
+}
+
+.navbar {
+    display: none;
+    width: 100%;
+}
+
+.nav-menu {
+    padding: 0;
+}
+
+.nav-item {
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.48px;
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    padding: 0;
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+
+.nav-item:hover .nav-link {
+    color: white;
+    background: #9E00FF;
+    border-radius: 16px;
+}
+
+.submenu li {
+    list-style: none;
+    margin: 3px 0;
+}
+
+.submenu li a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background: black;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 16px;
+}
+
+.submenu li a:hover {
+    background: #9E00FF;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+}
+
+#contact-btn {
+    font-family: Raleway, sans-serif;
+    font-size: 4vw;
+    font-weight: 500;
+    line-height: 23.48px;
+    text-align: center;
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 10px;
+    white-space: nowrap;
+    padding: 5px;
+}
+
+    /* Стили для квиза */
 
 .quiz-wrapper {
     display: block;
@@ -104,8 +200,8 @@ header {
     display: block;
 }
 
-/* Стили для чекбоксов */
-.answer-container {
+/* Стили для контейнера ответов */
+.answer-container, .form fieldset .custom-radio {
     font-family: Raleway, sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -113,10 +209,12 @@ header {
     text-align: left;
 }
 
-.answer-container fieldset {
+.answer-container fieldset, .form fieldset {
     border: none;
     padding: 0;
 }
+
+/* Стили для чекбоксов */
 
 .custom-checkbox {
     display: inline-block;
@@ -150,7 +248,7 @@ header {
 
 .checkmark {
     position: absolute;
-    top: 2px;
+    top: 1.7px;
     left: 2px;
     height: 25px;
     width: 25px;
@@ -158,7 +256,7 @@ header {
 }
 
 .custom-checkbox input:checked ~ .checkmark {
-    content: url("/assets/img/check.svg");
+    content: url("/assets/img/check-mobile.svg");
 }
 
 /* Стили для радио кнопок  */
@@ -243,6 +341,148 @@ header {
     border-radius: 10px 10px 15px 10px;
 }
 
+/* Стили для текстового поля */
+
+.custom-text {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid black;
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 37.57px;
+    text-align: left;
+}
+
+.custom-text::placeholder {
+    opacity: 30%;
+}
+
+/* Стили для множественного выбора */
+
+.custom-select {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.48px;
+    text-align: left;
+    border: 2px solid black;
+    border-radius: 12px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("/assets/img/arrow-down-icon.svg") no-repeat right;
+    background-position-x: calc(100% - 20px);
+    background-position-y: center;
+    cursor: pointer ;
+    background-transform: rotate(180deg);
+}
+
+details[open].custom-select {
+    z-index: 2;
+}
+
+.custom-select .radios input[type=radio]:after {
+    cursor: pointer;
+}
+
+.custom-select summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 4px 0 4px 20px;
+}
+
+.custom-select summary::-webkit-details-marker {
+    display: none;
+}
+
+.custom-select summary:focus {
+    outline: none;
+}
+
+.custom-select ul.list {
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: calc(100% + .5rem);
+    left: 0;
+    padding: 5px 10px;
+    margin: 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 12px;
+}
+
+.custom-select ul.list li {
+    list-style: none;
+    margin: 0;
+    padding: 7px 0;
+    border-bottom: 2px solid black;
+}
+
+.custom-select ul.list li:first-child {
+    padding-top: 0;
+}
+
+.custom-select ul.list li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* FAKE SELECT */
+
+.custom-select summary.radios {
+    counter-reset: radios;
+}
+
+.custom-select summary.radios:before {
+    content: var(--selection);
+}
+
+.custom-select .radios input[type=radio] {
+    counter-increment: radios;
+    appearance: none;
+    display: none;
+}
+
+.custom-select .radios input[type=radio]:checked {
+    display: inline;
+    --display: block;
+}
+
+.custom-select .radios input[type=radio]:after {
+    content: attr(title);
+    display: inline;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.48px;
+}
+
+ul.list {
+    counter-reset: labels;
+}
+
+.custom-select ul.list li label {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.custom-select ul.list li label span {
+    --display: none;
+    display: var(--display);
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #727272;
+    border-radius: 3px;
+}
+
 /* Стили для кнопок слайдера */
 
 .swiper-slide {
@@ -317,52 +557,214 @@ header {
     display: none !important;
 }
 
-/*
-.navbar {
-    width: 100%;
+/* Стили формы обратной связи */
+
+.fancybox__container {
+    /*--fancybox-bg: none !important;*/
 }
 
-.nav-menu {
-    padding: 0;
+.form {
+    color: black !important;
+    border-radius: 32px !important;
+    width: 676px;
 }
 
-.nav-item {
-    font-family: Raleway;
+.fancy-header {
+    color: black;
+}
+
+.form h2, .fancy-header h2 {
+    font-family: Neue Machina, sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 38.6px;
+    text-align: left;
+    margin-top: 0;
+}
+
+.form h2 {
+    margin-bottom: 0;
+}
+
+.form p, .form fieldset p, .fancy-header p {
+    font-family: Raleway, sans-serif;
     font-size: 20px;
     font-weight: 500;
     line-height: 23.48px;
-    list-style-type: none;
-    display: inline-block;
-    position: relative;
+    text-align: left;
 }
 
-.nav-link {
-    display: block;
-    color: black;
-    text-decoration: none;
-    padding: 15px 20px;
+.form fieldset .custom-radio input[type="radio"] + label:before {
+    width: 19px;
+    height: 19px;
 }
 
-.submenu {
-    display: none;
-    position: absolute;
+.form fieldset .custom-radio:hover input[type="radio"] + label:before {
+    top: 1px;
+    left: 1px;
+    width: 17px;
+    height: 17px;
+}
+
+.form fieldset .custom-radio.active:hover input[type="radio"] + label:before {
+    top: 0;
     left: 0;
-    background: #444;
+    width: 19px;
+    height: 19px;
 }
 
-.nav-item:hover .submenu {
-    display: block;
-}
-
-.submenu li a {
-    display: block;
-    padding: 10px;
+.form__submit, .form__close {
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 37.57px;
+    text-align: center;
+    border-radius: 10px;
+    background: black;
     color: white;
-    text-decoration: none;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
 }
 
+.form__submit:hover {
+    background: #9E00FF;
+}
 
- */
+.f-button.is-close-btn {
+    top: 15px !important;
+    right: 15px !important;
+    --f-button-bg: none !important;
+    --f-button-color: black !important;
+    --f-button-hover-bg: #9E00FF !important;
+    border: 2px solid black;
+    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+}
+
+.f-button.is-close-btn:hover {
+    border: 2px solid #9E00FF;
+}
+
+/* Стилизуем бокс для загрузки файла */
+.file-box {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: -30px;
+}
+
+/* Стилизуем поле с кнопкой и названием файла */
+.file__field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Убираем дефолтный инпут */
+#file {
+    display: none;
+}
+
+/* Стилизуем кнопку загрузки файла */
+.file__btn {
+    display: inline-block;
+    color: #fff;
+    background-color: black;
+    outline: none;
+    border: none;
+    padding: 0 15px 0 10px;
+    border-radius: 7px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.file__btn p {
+    font-size: 15px !important;
+    margin: 0;
+    display: none;
+}
+
+.file__btn:hover {
+    background-color: #9E00FF;
+}
+
+/* Стилизуем поле с названием файла и кнопкой закрыть */
+.file__info {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    margin-left: 10px;
+}
+
+.file__names {
+    display: none;
+    margin-bottom: 4px;
+    color: white;
+    font-family: Raleway, sans-serif;
+    font-size: 15px;
+    word-spacing: 1px;
+    user-select: none;
+}
+
+.file__btn img {
+    position: relative;
+    width: 18px;
+    height: 17px;
+    top: 3px;
+    right: -4px;
+}
+
+.file__btn-close {
+    display: none;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: red;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#comment.error {
+    border-color: #FF004C;
+    color: #FF004C;
+}
+
+#comment.error::placeholder {
+    color: #FF004C;
+}
+
+.warning {
+    display: none;
+}
+
+.warning img {
+    height: 24px;
+    width: 24px;
+    margin-left: 4px;
+}
+
+.warning:hover .hint{
+    display: block;
+    position: absolute;
+    width: 160px;
+    right: 34px;
+    background: #FF004C;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Стилизуем поле с подсказками */
+.hint {
+    display: none;
+    color: #516d7b;
+    font-size: 14px;
+}
 
 /* Отображаем ховер только на ПК */
 @media (hover: hover) and (pointer: fine) {
@@ -370,27 +772,42 @@ header {
         color: white;
         background: #9E00FF;
         border: 2px solid #9E00FF;
+        transition: 0.15s ease;
+    }
+
+    .custom-checkbox.active:hover {
+        color: white;
+        background: black;
+        border: 2px solid black;
+        transition: 0.15s ease;
+    }
+
+    .custom-checkbox.active:hover .checkmark {
+        content: url("/assets/img/check-active.svg");
     }
 
     .quiz-question:hover {
         background: #9E00FF;
         color: white;
+        transition: 0.15s ease;
     }
 
     .custom-radio:hover {
         color: white;
         background: #9E00FF;
         border: 2px solid #9E00FF;
+        transition: 0.15s ease;
     }
 
     .custom-radio.active:hover {
         background: black;
         border: 2px solid black;
+        transition: 0.15s ease;
     }
 
     .custom-radio:hover input[type="radio"] + label:before {
-        left: 2px;
-        top: 1px;
+        left: 1px;
+        top: 2px;
         border: none;
     }
 
@@ -400,9 +817,39 @@ header {
         border: 3px solid white;
         background-color: #9E00FF;
     }
+
+    .quiz-next:hover, .quiz-back:hover {
+        background-color: #9E00FF;
+        border: 2px solid #9E00FF;
+    }
+
+    .quiz-back:hover {
+        color: white;
+    }
 }
 
 @media (min-width: 768px) {
+
+    main {
+        height: 1250px;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #contact-btn {
+        height: 45px;
+        width: 231px;
+        font-size: 20px;
+        border-radius: 16px;
+    }
 
     .quiz-wrapper {
         display: flex;
@@ -414,7 +861,7 @@ header {
     }
 
     .quiz-question {
-        max-width: 320px;
+        width: 320px;
         border-radius: 5px;
     }
 
@@ -448,11 +895,12 @@ header {
         font-weight: 700;
         line-height: 69.48px;
         text-align: left;
+        margin: 0;
     }
 
     .quiz p {
         max-width: 700px;
-        padding: 0 0 50px 0;
+        margin: 30px 0 50px 0;
         font-size: 20px;
         font-weight: 500;
         line-height: 23.48px;
@@ -460,7 +908,11 @@ header {
     }
 
     .answer-container {
-        max-width: 600px;
+        max-width: 700px;
+    }
+
+    .custom-checkbox input:checked ~ .checkmark {
+        content: url("/assets/img/check.svg");
     }
 
     .quiz-buttons {
@@ -473,6 +925,14 @@ header {
         border-radius: 10px;
     }
 
+    .quiz-back {
+        width: 123px;
+    }
+
+    .quiz-next {
+        width: 186px;
+    }
+
     .swiper-button-next, .swiper-button-prev {
         display: flex !important;
         height: 100px !important;
@@ -480,5 +940,39 @@ header {
         background: white;
         border-radius: 32px;
         color: black !important;
+    }
+
+    .form h2, .fancy-header h2 {
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 69.48px;
+    }
+
+    .form fieldset .custom-text:first-child {
+        display: inline-block;
+        width: 47%;
+        margin-right: 3%;
+    }
+
+    .form fieldset .custom-text:nth-child(2) {
+        display: inline-block;
+        width: 49%;
+    }
+
+    .form fieldset .custom-text:nth-child(3) {
+        margin-top: 20px;
+    }
+
+    .file__btn p {
+        display: inline-block;
+    }
+
+    .f-button.is-close-btn {
+        width: 56px;
+        height: 56px;
+    }
+
+    .custom-text {
+        font-size: 32px;
     }
 }

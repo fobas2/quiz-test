@@ -5,7 +5,8 @@
     <title>Super Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/libs/fancybox/fancybox.css"/>
 </head>
 <body>
     <header class="main-header">
@@ -33,6 +34,9 @@
                 </li>
             </ul>
         </nav>
+        <div class="contacts">
+            <button data-fancybox href="#modal-form" id="contact-btn">Связаться с нами</button>
+        </div>
     </header>
     <main>
         <!-- Контейнер для вопросов -->
@@ -48,8 +52,7 @@
                     <p>Да, я прохожу все тесты</p>
                 </div>
                 <div id="qq-3" class="quiz-question" onclick="showQuestion(3)">
-                    <b>Кто взял это</b>
-                    <p>Пройди, и будешь счастлив.</p>
+                    <b>Спасибо за ответы! Заполните форму ниже</b>
                 </div>
                 <!-- Дополнительные вопросы -->
             </div>
@@ -132,27 +135,35 @@
                     </form>
                 </div>
                 <div id="quiz-3" class="quiz">
-                    <h1>Что? где? когда?</h1>
-                    <p>Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+                    <img src="assets/img/smile.png" alt="">
+                    <h1>Спасибо за ответы! Заполните форму ниже</h1>
+                    <p>Ваше мнение важно для нас. Прикрепите фото с Вашей любимой картинкой и оставьте комментарий насколько понравился Вам тест.</p>
                     <!-- Ответы -->
                     <form class="answer-container" action="">
                         <fieldset>
-                            <div class="custom-checkbox">
-                                <input type="checkbox" name="2" id="a-3-1">
-                                <label for="a-3-1">Он пошел туда</label>
-                                <span class="checkmark"></span>
-                            </div>
-                            <div class="custom-checkbox">
-                                <input type="checkbox" name="3" id="a-3-2">
-                                <label for="a-3-2">Вон то</label>
-                                <span class="checkmark"></span>
-                            </div>
-                            <div class="custom-checkbox">
-                                <input type="checkbox" name="1" id="a-3-3">
-                                <label for="a-3-3">Не знаю</label>
-                                <span class="checkmark"></span>
-                            </div>
-                            <!-- Дополнительные чекбоксы -->
+                            <input class="custom-text" type="text" placeholder="Ваше мнение сюда">
+                            <details class="custom-select">
+                                <summary class="radios">
+                                    <input type="radio" name="item" id="item1" title="Очень понравился" checked>
+                                    <input type="radio" name="item" id="item2" title="Не понравился">
+                                    <input type="radio" name="item" id="item3" title="Пройду еще раз">
+                                    <input type="radio" name="item" id="item4" title="Посоветую пройти всем">
+                                </summary>
+                                <ul class="list">
+                                    <li>
+                                        <label for="item1">Очень понравился</label>
+                                    </li>
+                                    <li>
+                                        <label for="item2">Не понравился</label>
+                                    </li>
+                                    <li>
+                                        <label for="item3">Пройду еще раз</label>
+                                    </li>
+                                    <li>
+                                        <label for="item4">Посоветую пройти всем</label>
+                                    </li>
+                                </ul>
+                            </details>
                         </fieldset>
                     </form>
                 </div>
@@ -237,11 +248,69 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
+        <!-- Связаться с нами -->
+        <form method="post" action="" class="form" id="modal-form" style="display: none;">
+            <div class="fancy-header">
+                <h2>Заполните контактные
+                    данные</h2>
+                <p>Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+            </div>
+            <fieldset>
+                <input type="text" name="name" class="custom-text" placeholder="Ваше имя"/>
+                <input type="text" name="mail" class="custom-text" placeholder="Фамилия"/>
+                <input required type="text" name="mail" class="custom-text" id="comment" placeholder="Ваш комментарий"/>
+                <div class="file-box">
+                    <div class="file__field">
+                        <input type="file" name="file[]" id="file" multiple/>
+                        <label class="file__btn" for="file">
+                            <p>Приложить файлы</p>
+                            <div class="file__names" id="file_names"></div>
+                            <img src="assets/img/pick-file.svg" alt="">
+                        </label>
+                        <div class="file__btn-close" id="file_btn_close">✖</div>
+                    </div>
+                    <div class="warning">
+                        <img src="assets/img/warning.svg" alt="">
+                        <div class="hint">
+                            Максимум 20 Мб<br>
+                            В формате jpg, png
+                        </div>
+                    </div>
+                </div>
+                <p>Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+                <div class="custom-radio">
+                    <input type="radio" name="2" id="f-1">
+                    <label for="f-1">Не знаю</label>
+                </div>
+                <div class="custom-radio">
+                    <input type="radio" name="2" id="f-2">
+                    <label for="f-2">Увидел это</label>
+                </div>
+                <div class="custom-radio">
+                    <input type="radio" name="2" id="f-3">
+                    <label for="f-3">Вон то</label>
+                </div>
+                <div class="custom-radio">
+                    <input type="radio" name="2" id="f-4">
+                    <label for="f-4">Вон то</label>
+                </div>
+                <div class="custom-radio">
+                    <input type="radio" name="2" id="f-5">
+                    <label for="f-5">Увидел это</label>
+                </div>
+                <div class="custom-radio">
+                    <input type="radio" name="2" id="f-6">
+                    <label for="f-6">Не знаю</label>
+                </div>
+            </fieldset>
+            <input type="submit" value="Продолжить" class="form__submit"/>
+        </form>
     </main>
     <footer class="main-footer">
 
     </footer>
     <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/libs/fancybox/fancybox.umd.js"></script>
     <script>
         var swiper = new Swiper(".swiper-container", {
             navigation: {
@@ -274,6 +343,113 @@
                     spaceBetween: 40
                 }
             }
+        });
+    </script>
+    <script>
+        document.getElementById('contact-btn').addEventListener('click', function() {
+            Fancybox.show([{ src: "#modal-form", type: "inline" }]);
+        });
+    </script>
+    <script>
+        // Считываем нужные элементы
+        const fileInput = document.querySelector("#file");
+        const fileNamesContainer = document.querySelector("#file_names");
+        const fileBtn = document.querySelector(".file__btn p");
+        const fileBtnClose = document.querySelector("#file_btn_close");
+        const inputComment = document.querySelector("#comment");
+        const fileWarning = document.querySelector(".warning");
+        const hint = document.querySelector(".hint");
+        // Задаем максимальный размер файла 20 Мб
+        const maxSize = 20 * 1024 * 1024;
+
+        // При загрузке файлов - вызываем функцию проверки файлов
+        fileInput.addEventListener("change", (e) => {
+            // Очищаем предыдущие имена файлов
+            fileNamesContainer.innerHTML = '';
+            // Проверяем каждый выбранный файл
+            Array.from(fileInput.files).forEach(checkFile);
+        });
+
+        // Обработчик кнопки удаления файлов
+        fileBtnClose.addEventListener("click", (e) => {
+            e.preventDefault();
+            fileReset();
+        });
+
+        // Функция проверки файла
+        function checkFile(file) {
+            // Проверяем тип файла
+            if (!["image/jpg", "image/png"].includes(file.type)) {
+                fileWarning.style.display = "block";
+                inputComment.classList.add('error');
+                fileReset();
+                return;
+            }
+
+            // Проверяем размер файла (<20 Мб)
+            if (file.size > maxSize) {
+                fileWarning.style.display = "block";
+                inputComment.classList.add('error');
+                fileReset();
+                return;
+            }
+            showFileNames(file);
+        }
+
+        // Сброс выбранных файлов
+        function fileReset() {
+            fileInput.value = ""; // Удаляем выбранные файлы
+            fileNamesContainer.innerHTML = ""; // Очищаем список имен файлов
+            fileNamesContainer.style.display = "none";
+            fileBtnClose.style.display = "none"; // Скрываем кнопку удаления
+            fileBtn.style.display = "inline-block";
+        }
+
+        // Выводим имена файлов и кнопку удаления
+        function showFileNames(file) {
+            const fileNameElement = document.createElement("span");
+            fileNameElement.textContent = file.name + " ";
+            fileNamesContainer.appendChild(fileNameElement);
+            fileNamesContainer.style.display = "inline-block";
+            fileBtnClose.style.display = "inline-block"; // Показываем кнопку удаления
+            fileBtn.style.display = "none";
+            fileWarning.style.display = "none";
+            inputComment.classList.remove('error');
+        }
+
+        // Функция для удаления файла из списка FileList
+        function removeFileFromFileList(fileList, fileToRemove) {
+            // FileList объекты являются read-only, поэтому мы должны создать новый список
+            const newFileList = Array.from(fileList).filter(file => file !== fileToRemove);
+            // Создаем новый объект DataTransfer
+            const dataTransfer = new DataTransfer();
+            newFileList.forEach(file => dataTransfer.items.add(file));
+            // Возвращаем новый FileList
+            return dataTransfer.files;
+        }
+
+        // Функция если поле пустое
+        document.querySelector('.form__submit').addEventListener('click', function() {
+            if (inputComment.value == "") {
+                fileWarning.style.display = "block";
+                hint.innerHTML = "Это обязательное поле";
+                inputComment.classList.add('error');
+            }
+        });
+
+        // Функция при отправке формы
+        document.getElementById('modal-form').addEventListener('submit', function(e) {
+            var formContent = document.getElementById('modal-form');
+            formContent.innerHTML =
+                `
+                    <img src="assets/img/form-smile.png" alt="" width="128" height="129">
+                    <h2>Ваши данные
+                    Отправлены</h2>
+                    <p>Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+                    <div data-fancybox-close="" class="form__close">Вернутся на сайт</div>
+                    <button data-fancybox-close="" class="f-button is-close-btn" title="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" tabindex="-1"><path d="M20 20L4 4m16 0L4 20"></path></svg></button>
+                `;
+            e.preventDefault();
         });
     </script>
     <script>
@@ -320,11 +496,24 @@
                     const input = event.target.closest('.custom-radio').querySelector('input[type="radio"]');
                     input.checked = true;
                 }
-                // Если нажали на label
-                if (event.target.closest('label')) {
+                // Если нажали на custom-checkbox label
+                if (event.target.closest('.custom-checkbox label')) {
                     event.target.closest('label').parentElement.classList.toggle('active');
                     const input = event.target.closest('label').previousSibling;
                     input.checked = !input.checked;
+                }
+                // Если нажали на custom-select label
+                if (event.target.closest('.custom-select .list li label')) {
+                    document.querySelector('details.custom-select').removeAttribute('open');
+                }
+                // Если нажали на details.custom-select
+                if (event.target.closest('details.custom-select')) {
+                    let details = document.querySelector('details.custom-select');
+                    if (details.hasAttribute('open')) {
+                        details.removeAttribute('open');
+                    } else {
+                        details.setAttribute('open', '');
+                    }
                 }
             }
         });
